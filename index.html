@@ -1,0 +1,65 @@
+<html>
+<head>
+	<script src="https://live.decidir.com/static/v2.5/decidir.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/payment.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<head>
+<body>
+
+<div class="bloque">
+	<h1>Formulario de pago</h1>
+	<form action="" method="post" id="card_data_form" name="token-form" >
+		<fieldset>
+			<ul>
+				<li>
+					<input type="checkbox" id="fraud_prevention" checked onchange="withFraudPrevention(event.target.checked);">Use fraud prevention</input>
+				</li>
+				<li>
+					<label for="card_number">Credit card number:</label>
+					<input type="text" data-decidir="card_number" name="card_number" placeholder="XXXXXXXXXXXXXXXX" value="4507990000004905"/>
+				</li>
+
+				<li>
+					<label for="security_code">Security code:</label>
+					<input type="text"  data-decidir="security_code" placeholder="XXX" value="123" />
+				</li>
+
+				<li>
+					<label for="card_expiration_month">Expiration month:</label>
+					<input type="text"  data-decidir="card_expiration_month" placeholder="MM" value="08"/>
+				</li>
+
+				<li>
+					<label for="card_expiration_year">Expiration year:</label>
+					<input type="text"  data-decidir="card_expiration_year" placeholder="YY" value="20"/>
+				</li>
+
+				<li>
+					<label for="card_holder_name">Card holder name:</label>
+					<input type="text" data-decidir="card_holder_name" placeholder="APRO" value="EMANUEL MOSTO"/>
+				</li>
+
+				<li>
+					<label for="card_holder_doc_type">Document number:</label>
+					<input type="text"data-decidir="card_holder_doc_number" placeholder="XXXXXXXXXX" value="28519851"/>
+				</li>
+
+			</ul>
+			<input type="submit" value="Generate Token!" id="btnGenerateToken" />
+		</fieldset>
+	</form>
+</div>
+<div class="result">
+	<span> Resultado token</span>
+	<p id="resultado"></p>
+</div>
+
+<div class="paymentResult">
+	<span> Resultado Pago</span>
+	<p id="paymentResult"></p>
+</div>
+
+
+</body>
+</html>
